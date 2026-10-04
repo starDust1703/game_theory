@@ -164,10 +164,10 @@ export default function GameBoard({
 
       {/* Payout reminder */}
       <div className="payout-info">
-        <span>Both coop: <b>+2/+2</b></span>
-        <span>Both cheat: <b>0/0</b></span>
-        <span>You cheat, they coop: <b>+3/−1</b></span>
-        <span>You coop, they cheat: <b>−1/+3</b></span>
+        <span>Both cooperate: <b>3/3</b></span>
+        <span>Both cheat: <b>1/1</b></span>
+        <span>You cheat, they cooperate: <b>5/0</b></span>
+        <span>You cooperate, they cheat: <b>0/5</b></span>
       </div>
     </div>
   );

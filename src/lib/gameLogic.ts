@@ -29,12 +29,12 @@ export interface RoundResult {
 
 export const PAYOUT_MATRIX = {
   COOPERATE: {
-    COOPERATE: { player: 2, ai: 2 },
-    CHEAT:     { player: -1, ai: 3 },
+    COOPERATE: { player: 3, ai: 3 },
+    CHEAT:     { player: 0, ai: 5 },
   },
   CHEAT: {
-    COOPERATE: { player: 3, ai: -1 },
-    CHEAT:     { player: 0, ai: 0 },
+    COOPERATE: { player: 5, ai: 0 },
+    CHEAT:     { player: 1, ai: 1 },
   },
 };
 
@@ -230,9 +230,10 @@ export function getAIMove(
       }
       const pCC = myCoopCount > 0 ? cc / myCoopCount : 0.5;
       const pDC = myDefectCount > 0 ? dc / myDefectCount : 0.5;
-      // Expected payoff: cooperate → 3·pCC − 1 ; defect → 3·pDC
-      const eC = 3 * pCC - 1;
-      const eD = 3 * pDC;
+      // Expected payoff for the current payoff matrix:
+      // cooperate → 3·pCC ; defect → 1 + 4·pDC
+      const eC = 3 * pCC;
+      const eD = 1 + 4 * pDC;
       return eD > eC ? 'CHEAT' : 'COOPERATE';
     }
 

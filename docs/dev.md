@@ -59,8 +59,8 @@ The payoff matrix is:
 
 ```text
                        Opponent cooperates   Opponent cheats
-Player cooperates              2 / 2              -1 / 3
-Player cheats                   3 / -1              0 / 0
+Player cooperates              3 / 3               0 / 5
+Player cheats                   5 / 0               1 / 1
 ```
 
 The first value is the player’s score and the second is the opponent’s score.
